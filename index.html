@@ -1,41 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stone_Paper_Scissor</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <!-- ================= GAME TITLE ================= -->
     <h1><b>Rock, Paper & Scissor</b></h1>
+    <!-- ============================================= -->
+
+    <!-- ================= CONTROL BUTTONS ================= -->
+    <!-- Reset game and Match mode buttons -->
+    <div class="controls">
+        <button id="resetBtn">🔄 New Game</button>
+        <button id="matchBtn">🎯 Match Mode</button>
+    </div>
+    <!-- ================================================== -->
+
+    <!-- ================= PLAYER CHOICES AREA ================= -->
     <div class="choices">
+        <!-- Animated GIF shown during result calculation -->
         <div class="video1">
             <video src="gif.mp4" autoplay loop muted></video>
         </div>
+        <!-- Rock choice -->
         <div class="choice img1" id="Rock">
             <img src="rock.png">
         </div>
+        <!-- Paper choice -->
         <div class="choice img1" id="Paper">
             <img src="paper.png">
         </div>
+        <!-- Scissor choice -->
         <div class="choice img1" id="Scissor">
             <img src="scissors.png">
         </div>
     </div>
+    <!-- ===================================================== -->
+
+    <!-- ================= SCOREBOARD ================= -->
     <div id="game">
+        <!-- User score -->
         <div class="score">
             <p id="userscore">0</p>
             <p>YOU</p>
         </div>
+        <!-- Computer score -->
         <div class="score">
             <p id="compscore">0</p>
             <p>Computer</p>
         </div>
     </div>
+    <!-- ============================================== -->
 
+    <!-- ================= MESSAGE DISPLAY ================= -->
     <div id="msg-container">
         <p id="msg">Play your move</p>
     </div>
+    <!-- ================================================ -->
+
+    <!-- ================= MATCH MODE POPUP ================= -->
+    <!-- Shown when user selects Match Mode -->
+    <div class="modal hide" id="matchModal">
+        <div class="modal-content">
+            <h2>🎯 Match Mode</h2>
+            <p>First to <b>5 wins</b> will win the match.</p>
+
+            <!-- Modal action buttons -->
+            <div class="modal-btns">
+                <button id="startMatch">Start Match</button>
+                <button id="closeModal">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- =================================================== -->
 
     <script src="script.js"></script>
 </body>

@@ -1,27 +1,44 @@
+/* ================= GOOGLE FONT IMPORT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ================= GLOBAL RESET & BASE ================= */
 * {
     margin: 0;
     padding: 0;
-    text-align: center;
     box-sizing: border-box;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* ================= BODY BACKGROUND ================= */
+body {
+    background: linear-gradient(135deg, #052e16, #064e3b, #065f46);
+    min-height: 100vh;
+}
+
+/* ================= GAME TITLE ================= */
 h1 {
     background-color: #081b31;
     color: aliceblue;
     line-height: 4rem;
-    font-size: 3rem;
+    font-size: 3.2rem;
     padding: 1rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
+/* ================= CHOICES CONTAINER ================= */
 .choices {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Makes it responsive */
+    flex-wrap: wrap;              /* Responsive wrapping */
     margin-top: 3rem;
     gap: 2rem;
 }
 
+/* ================= INDIVIDUAL CHOICE ================= */
 .choice {
     height: 140px;
     width: 130px;
@@ -32,12 +49,14 @@ h1 {
     transition: transform 0.2s ease-in-out;
 }
 
+/* Hover effect for choices */
 .choice:hover {
     cursor: pointer;
     background-color: black;
-    transform: scale(1.1); /* Small zoom effect */
+    transform: scale(1.1);        /* Small zoom effect */
 }
 
+/* ================= CHOICE IMAGES ================= */
 img {
     height: 130px;
     width: 120px;
@@ -45,41 +64,51 @@ img {
     object-fit: cover;
 }
 
+/* ================= SCOREBOARD ================= */
 #game {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Makes it responsive */
+    flex-wrap: wrap;              /* Responsive layout */
     margin-top: 3rem;
     gap: 3rem;
 }
 
-.score {
-    font-size: 1.8rem;
+.score p {
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 
-#userscore, #compscore {
-    font-size: 3rem;
+/* Score numbers */
+#userscore,
+#compscore {
+    font-size: 3.2rem;
+    font-weight: 700;
 }
 
+/* ================= MESSAGE DISPLAY ================= */
 #msg-container {
     margin-top: 3rem;
 }
 
 #msg {
-    font-size: 2.5rem;
-    background-color: #20456e;
+    font-size: 2.2rem;
+    background-color: #225a9b;
     color: aliceblue;
-    display: inline;
-    padding: 0.8rem;
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
     border-radius: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 
+/* ================= IMAGE GROUP ================= */
 .img1 {
     display: flex;
 }
 
-/* ---- Video fixed at 300px ---- */
+/* ================= RESULT GIF ================= */
+/* Fixed-size animation shown during play */
 .video1 {
     display: none;
     width: 300px;
@@ -93,7 +122,7 @@ img {
     border-radius: 15%;
 }
 
-/* ---- Responsive Design for Smaller Screens ---- */
+/* ================= RESPONSIVE DESIGN (TABLET) ================= */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
@@ -122,7 +151,8 @@ img {
         font-size: 1.5rem;
     }
 
-    #userscore, #compscore {
+    #userscore,
+    #compscore {
         font-size: 2.5rem;
     }
 
@@ -132,6 +162,7 @@ img {
     }
 }
 
+/* ================= RESPONSIVE DESIGN (MOBILE) ================= */
 @media (max-width: 480px) {
     h1 {
         font-size: 2rem;
@@ -163,7 +194,8 @@ img {
         font-size: 1.3rem;
     }
 
-    #userscore, #compscore {
+    #userscore,
+    #compscore {
         font-size: 2rem;
     }
 
@@ -173,4 +205,101 @@ img {
     }
 }
 
+/* ================= CONTROL BUTTONS ================= */
+.controls {
+    margin-top: 2rem;
+}
 
+/* New Game / Reset Button */
+#resetBtn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    background-color: #0189a4;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#resetBtn:hover {
+    background-color: #015969;
+}
+
+/* ================= MATCH MODE MODAL ================= */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 300px;
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+}
+
+/* Modal action buttons */
+.modal-btns {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-btns button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Start match button */
+#startMatch {
+    background-color: green;
+    color: white;
+}
+
+/* Close modal button */
+#closeModal {
+    background-color: red;
+    color: white;
+}
+
+/* Utility class to hide elements */
+.hide {
+    display: none;
+}
+
+/* ================= MATCH MODE BUTTON ================= */
+#matchBtn {
+    margin-left: 1rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: darkorange;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#matchBtn:hover {
+    background-color: rgb(255, 170, 13);
+}
