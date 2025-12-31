@@ -24,7 +24,7 @@
 <p>
   <em>
     Play the game live in your browser:<br>
-    🔗 <a href="https://cheerful-dusk-1274ed.netlify.app/"><b>Play Rock Paper Scissor</b></a>
+    🔗 <a href="https://benevolent-liger-849fb2.netlify.app/"><b>Play Rock Paper Scissor</b></a>
   </em>
 </p>
 
